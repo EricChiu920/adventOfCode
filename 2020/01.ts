@@ -8,8 +8,10 @@ interface differenceObj {
 const twoSum = (nums: number[], target: number = 2020): [number, number] | undefined => {
   const map: differenceObj = {};
 
-  for (let num of nums) {
+  for (let i = 0; i < nums.length; i += 1) {
+    const num = nums[i];
     const difference = target - num;
+
     if (num in map) {
       return [num, difference];
     }
@@ -19,20 +21,26 @@ const twoSum = (nums: number[], target: number = 2020): [number, number] | undef
 };
 
 const threeSum = (nums: number[], target: number = 2020): [number, number, number] => {
-  for (let num of nums) {
+  for (let i = 0; i < nums.length; i += 1) {
+    const num = nums[i];
+
     const difference = target - num;
-    let twoNums = twoSum(nums, difference);
+    const twoNums = twoSum(nums, difference);
     if (twoNums !== undefined) {
       const answer: [number, number, number] = [twoNums[0], twoNums[1], num];
       return answer;
     }
   }
-}
+
+  throw new Error(`Unable to find three numbers that adds to ${target}`);
+};
 
 const multiply = (nums: number[]) => {
   let product = 1;
 
-  for (let num of nums) {
+  for (let i = 0; i < nums.length; i += 1) {
+    const num = nums[i];
+
     product *= num;
   }
 
@@ -40,7 +48,11 @@ const multiply = (nums: number[]) => {
 };
 
 const day01 = (): number => {
-  return multiply(threeSum(expenseReportExample));
-}
+  try {
+    return multiply(threeSum(expenseReportExample));
+  } catch (error) {
+    return error;
+  }
+};
 
-console.log(day01())
+console.log(day01());
