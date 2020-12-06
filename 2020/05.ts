@@ -36,7 +36,7 @@ const findSeatFromBoardingPass = (boardingPass: string): [number, number] => {
 };
 
 const findMySeat = (allSeatIds: number[]) => {
-  const minSeat = 7;
+  const minSeat = 5;
   const maxSeat = 1011;
 
   for (let i = 0; i < allSeatIds.length - 1; i += 1) {
