@@ -36,14 +36,11 @@ const findSeatFromBoardingPass = (boardingPass: string): [number, number] => {
 };
 
 const findMySeat = (allSeatIds: number[]) => {
-  const minSeat = 5;
-  const maxSeat = 1011;
-
   for (let i = 0; i < allSeatIds.length - 1; i += 1) {
     const seatId = allSeatIds[i];
     const nextSeatId = allSeatIds[i + 1];
 
-    if (nextSeatId === seatId + 2 && seatId > minSeat && seatId < maxSeat) {
+    if (nextSeatId === seatId + 2) {
       return seatId + 1;
     }
   }
