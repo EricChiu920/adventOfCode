@@ -17,15 +17,28 @@ const countYesInAnswers = (groupAnswer: string[]) => {
     }
   }
 
-  return Object.values(yesAnswers).filter((answers) => answers === groupAnswer.length).length;
+  return yesAnswers;
 };
 
 const main = async () => {
   const lines = await parseGroupsSeparatedByEmptyLines('06');
 
-  console.log(lines
-    .map(countYesInAnswers)
-    .reduce((acc, curr) => acc + curr, 0));
+  const groupAnswersArr = lines
+    .map(countYesInAnswers);
+
+  const partOneAnswer = groupAnswersArr
+    .map((groupAnswers) => Object.keys(groupAnswers).length)
+    .reduce((acc, curr) => acc + curr);
+
+  const partTwoAnswer = groupAnswersArr
+    .map((groupAnswers, i) => {
+      const group = lines[i];
+      return Object.values(groupAnswers).filter((answersCount) => answersCount === group.length).length;
+    })
+    .reduce((acc, curr) => acc + curr);
+
+  console.log('Part One:', partOneAnswer);
+  console.log('Part Two:', partTwoAnswer);
 };
 
 main();
