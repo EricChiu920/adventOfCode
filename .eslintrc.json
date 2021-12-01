@@ -17,7 +17,8 @@
     "rules": {
         "max-len":"off",
         "no-console":"off",
-        "import/extensions": ["error", "ignorePackages", {"ts": "never", "tsx": "never"}]
+        "import/extensions": ["error", "ignorePackages", {"ts": "never", "tsx": "never"}],
+        "linebreak-style": ["error", "windows"]
     },
     "settings": {
         "import/resolver": {

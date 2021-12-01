@@ -21,7 +21,8 @@ const getGroupsSeparatedByEmptyLines = (lines: string[]) => {
 };
 
 export const parseLines = async (fileName: string): Promise<string[]> => {
-  const data = await fs.readFile(path.resolve(__dirname, fileName), { encoding: 'utf-8' });
+  const scriptDirName = `${process.argv[1].slice(0, process.argv[1].lastIndexOf('\\'))}\\`;
+  const data = await fs.readFile(path.resolve(scriptDirName, fileName), { encoding: 'utf-8' });
   return data.split('\n');
 };
 
