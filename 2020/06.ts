@@ -1,4 +1,4 @@
-import { parseGroupsSeparatedByEmptyLines } from './helper';
+import { parseGroupsSeparatedByEmptyLines } from '../helpers/helper';
 
 const countYesInAnswers = (groupAnswer: string[]) => {
   const yesAnswers: { [key: string]: number } = {};

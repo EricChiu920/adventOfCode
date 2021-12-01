@@ -1,4 +1,4 @@
-import { parseLines } from './helper';
+import { parseLines } from '../helpers/helper';
 
 const isTree = (x: number, y: number, map: string[]) => {
   const modNum = map[0].length;

@@ -1,4 +1,4 @@
-import { parseLines, Character } from './helper';
+import { parseLines, Character } from '../helpers/helper';
 
 const getPolicy = (input: string): [number, number, Character, string] | null => {
   const strings = input.split(' ');

@@ -1,4 +1,4 @@
-import { parseLines } from './helper';
+import { parseLines } from '../helpers/helper';
 
 const getSeatId = (row: number, column: number) => row * 8 + column;
 

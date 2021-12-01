@@ -1,4 +1,4 @@
-import { parseLines } from './helper';
+import { parseLines } from '../helpers/helper';
 
 // refactor to return array of objects instead?
 const getPassports = (passportBatch: string[]): string[] => {
