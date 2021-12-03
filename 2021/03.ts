@@ -17,7 +17,6 @@ const getMostCommonBitInColumn = (report: string[], column: number): '0' | '1' =
   return zero > one ? '0' : '1';
 };
 
-// eslint-disable-next-line no-unused-vars
 const main = async () => {
   const diagnosticReports = await parseLines('03');
   let gamma = '';
