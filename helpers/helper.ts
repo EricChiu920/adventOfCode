@@ -33,3 +33,5 @@ export const parseGroupsSeparatedByEmptyLines = async (fileName: string): Promis
 };
 
 export type Character = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' |'m' | 'n' | 'o' | 'p' | 'q' | 'r' |'s' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z';
+
+export const transposeMatrix = (matrix: any[][]) => matrix[0].map((col, c) => matrix.map((row, r) => matrix[r][c]));
