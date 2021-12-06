@@ -40,7 +40,7 @@ const simulateDay = (lanternFishList: FishCounter) => {
   return newFishList;
 };
 
-const simulateMain = async (totalDays: number) => {
+const main = async (totalDays: number) => {
   const lanternFishData = await parseLines('06.txt');
   const lanternFishList = lanternFishData[0].split(',').map((timer) => Number(timer));
   const calculatedFish: { [key: string]: number; } = {};
@@ -58,4 +58,4 @@ const simulateMain = async (totalDays: number) => {
   console.log(lanternFishList.reduce((acc, timer) => acc + calculatedFish[timer], 0));
 };
 
-simulateMain(256);
+main(256);
