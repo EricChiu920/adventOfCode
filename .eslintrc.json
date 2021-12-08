@@ -18,7 +18,8 @@
         "max-len":"off",
         "no-console":"off",
         "import/extensions": ["error", "ignorePackages", {"ts": "never", "tsx": "never"}],
-        "linebreak-style": ["error", "windows"]
+        "linebreak-style": ["error", "windows"],
+        "no-unused-vars": ["error", { "args": "after-used" }]
     },
     "settings": {
         "import/resolver": {
